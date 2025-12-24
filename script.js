@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer YOUR_API_KEY_HERE`, // <<-- GET THIS FROM OPENAI
+                    'Authorization': `Bearer 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`, // <<-- GET THIS FROM OPENAI
                 },
                 body: JSON.stringify({
                     model: "completions",
