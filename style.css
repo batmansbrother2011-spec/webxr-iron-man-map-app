@@ -1,0 +1,77 @@
+/* --- Base & UI --- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f0f0f0;
+    font-family: -vndx-system-font, sans-serif, monospace; /* Monospace is key for VR */
+    overflow: hidden; /* Critical to prevent UI from being clipped */
+}
+
+/* --- General Overlay Styling --- */
+.overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 720px; /* Quest 3 resolution */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    text-align: center;
+    display: flex; /* Flexbox for centering content */
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: center; /* Center all items vertically */
+}
+
+/* --- Buttons --- */
+.action-button {
+    background-color: #2E8B57; /* Forest Green */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.action-button:hover {
+    background-color: #3CB371; /* Deeper green on hover */
+    transform: scale(1.05);
+}
+
+/* --- Content & Headings --- */
+h1 {
+    margin-top: 0;
+    font-size: 2.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* --- Mask Style (Static for now) --- */
+.ir-on-man-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('mask.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+}
+
+/* --- Responsive Adjustments for Quest 3 --- */
+@media (orientation: landscape) {
+    /* Landscape mode can have subtle differences in UI placement */
+    .overlay {
+        width: 80%;
+    }
+}
